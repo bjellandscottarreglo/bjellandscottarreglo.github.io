@@ -1,0 +1,6 @@
+# Full-resolution camera originals exported from Photos.
+# Kept locally as your master copies — not needed by the site,
+# and 26MB of them would bloat the public repo.
+assets/img/_originals/
+
+.DS_Store
