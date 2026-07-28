@@ -48,11 +48,7 @@ const CLIENTS = [
   "Pops Fernandez",
   "Gigi De Lana",
   "Mayonnaise",
-  "Unilever",
-  "Globe Telecom",
-  "Cebu Pacific",
-  "Pilmico",
   "ASEAN Summit 2026",
-  "Island Voices",
+  "The Island Voices",
   "Intune Worship"
 ];
