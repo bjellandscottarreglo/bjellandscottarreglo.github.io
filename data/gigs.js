@@ -12,7 +12,7 @@
 const GALLERY = [
   { src: "assets/img/smcebu-console.webp", cap: "FOH position — SM Seaside Arena" },
   { src: "assets/events/julian-marley-04.webp", cap: "Monitors — Julian Marley & The Uprising" },
-  { src: "assets/events/julian-marley-02-t.webp", cap: "Worked with Julian Marley's Monitor Guy" },
+  { src: "assets/events/micheal-learns-to-rock-cebu-03.webp", cap: "With the One & Only ARTHREE MASONG" },
   { src: "assets/events/asean-summit-2026-04.webp", cap: "ASEAN Summit 2026 with SVC" },
   { src: "assets/events/pilmico-corporate-event-foh-01.webp", cap: "DM7 compact for FOH mix" },
   { src: "assets/events/secondhand-serenade-mon-assist-02-t.webp", cap: "Monitors Assist for Secondhand Serenade" }
