@@ -399,9 +399,25 @@ body.lb-open{overflow:hidden}
     background:rgba(11,11,12,.96);backdrop-filter:blur(18px);
     padding:1.4rem var(--pad) 1.8rem;border-bottom:1px solid var(--line);
   }
-  .hero{min-height:auto;padding-top:6rem}
-  .hero__photo{height:min(62vh,540px);opacity:.92}
-  .hero__inner{padding-top:clamp(2rem,22vh,7rem)}
+  /* --- mobile hero: photo sits off to the right so it never sits under the copy --- */
+  .hero{min-height:auto;padding-top:5rem}
+  .hero__photo{
+    left:auto;right:-14%;
+    height:min(46vh,400px);
+    opacity:.85;
+    filter:brightness(.82) contrast(1.04) saturate(.9);
+    /* dissolve well above the services divider so the torso never ends on a hard edge */
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 34%,rgba(0,0,0,.72) 56%,rgba(0,0,0,.3) 76%,transparent 93%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 34%,rgba(0,0,0,.72) 56%,rgba(0,0,0,.3) 76%,transparent 93%);
+  }
+  /* scrim under the copy — keeps the headline readable whatever the photo does behind it */
+  .hero__inner::before{
+    content:"";position:absolute;inset:-3rem -1rem -1rem -2rem;z-index:-1;pointer-events:none;
+    background:linear-gradient(100deg, rgba(90,22,0,.9) 0%, rgba(90,22,0,.72) 48%, rgba(90,22,0,.28) 76%, transparent 100%);
+  }
+  .hero__inner{position:relative;padding-top:clamp(9rem,30vh,15rem)}
+  .hero__title{font-size:clamp(2.9rem,13vw,4.6rem)}
+  .hero__sub{max-width:34ch}
   .hero__services{grid-template-columns:repeat(2,1fr);gap:1.2rem}
   .scrollcue{display:none}
   .strip__grid{grid-template-columns:1fr;gap:1.2rem}
@@ -417,6 +433,12 @@ body.lb-open{overflow:hidden}
   .gig__role{grid-row:2;grid-column:2}
 }
 @media(max-width:520px){
+  /* narrow phones: pull the photo further out and lighten it again */
+  .hero__photo{right:-24%;height:min(40vh,340px);opacity:.78}
+  .hero__inner{padding-top:clamp(7rem,26vh,12rem)}
+  .hero__title{font-size:clamp(2.6rem,14vw,3.6rem)}
+  .hero__claim{font-size:1.1rem;max-width:22ch}
+  .hero__sub{font-size:.9rem;max-width:26ch}
   .hero__services{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
   .vids{grid-template-columns:1fr}
@@ -635,11 +657,15 @@ body.lb-open{overflow:hidden}
   /* ---- hero parallax ---- */
   var photo = $('#heroPhoto');
   if(photo && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    /* on mobile the photo is positioned from the right, so the inline
+       translateX(-50%) this writes would shove it back off-centre — skip it there */
+    var narrow = matchMedia('(max-width:860px)');
     window.addEventListener('scroll', function(){
-      /* gentle drift only — a large offset would push the photo into the hero's clip edge */
+      if(narrow.matches){ if(photo.style.transform) photo.style.transform = ''; return }
       var y = Math.min(window.scrollY, 500);
       photo.style.transform = 'translateX(-50%) translateY(' + (y * 0.06) + 'px) scale(' + (1 + y * 0.00006) + ')';
     }, {passive:true});
+    narrow.addEventListener('change', function(e){ if(e.matches) photo.style.transform = '' });
   }
 
   /* ---- marquee ---- */
