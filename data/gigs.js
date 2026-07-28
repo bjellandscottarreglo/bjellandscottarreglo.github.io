@@ -11,11 +11,11 @@
 
 const GALLERY = [
   { src: "assets/img/smcebu-console.webp", cap: "FOH position — SM Seaside Arena" },
-  { src: "assets/events/julian-marley-01.webp", cap: "Monitors — Julian Marley & The Uprising" },
-  { src: "assets/events/micheal-learns-to-rock-cebu-02.webp", cap: "Michael Learns to Rock, Cebu" },
-  { src: "assets/events/jesus-reigns-pre-celeb-san-remegio-mon-mix-02.webp", cap: "Jesus Reigns Pre-Celebration" },
-  { src: "assets/events/multishow-on-a-weekend-03.webp", cap: "Multi-show weekend" },
-  { src: "assets/events/lacosutics-l2-certification-02.webp", cap: "L-Acoustics L2" }
+  { src: "assets/events/julian-marley-04.webp", cap: "Monitors — Julian Marley & The Uprising" },
+  { src: "assets/events/julian-marley-02-t.webp", cap: "Worked with Julian Marley's Monitor Guy" },
+  { src: "assets/events/asean-summit-2026-04.webp", cap: "ASEAN Summit 2026 with SVC" },
+  { src: "assets/events/pilmico-corporate-event-foh-01.webp", cap: "DM7 compact for FOH mix" },
+  { src: "assets/events/secondhand-serenade-mon-assist-02-t.webp", cap: "Monitors Assist for Secondhand Serenade" }
 ];
 
 /* ============================================================
