@@ -52,11 +52,7 @@ const CLIENTS = [
   "Globe Telecom",
   "Cebu Pacific",
   "Pilmico",
-  "SM Seaside Arena",
-  "NUSTAR Resort",
   "ASEAN Summit 2026",
   "Island Voices",
-  "LIVE LOUDER",
-  "DEEPER",
   "Intune Worship"
 ];
