@@ -48,6 +48,7 @@ const CLIENTS = [
   "Pops Fernandez",
   "Gigi De Lana",
   "Mayonnaise",
+   "Kamikazee",
   "The Island Voices",
   "Intune Worship"
 ];
